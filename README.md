@@ -11,3 +11,7 @@ Basic knowledge of coding
 ## Outcome
 
 When all answers are selected, you will initial and the test will provide your final score.
+
+
+
+![image](https://user-images.githubusercontent.com/92769029/144178412-2619d39b-6bbb-4b41-9cb6-205eed0f8ef5.png)
