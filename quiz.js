@@ -1,17 +1,27 @@
-//
-const quizContainer = document.getElementById('quiz');
-const resultsContainer = document.getElementById('results');
-const submitButton = document.getElementById('submit');
+// functions used
 
-function selectingAnswer () {
-    var answer = generateAnswer();
-    var answerText = document.querySelector("#answer");
-    answerText.value = answer;
+
+// variables used
+var quizContainer = document.getElementById('quiz');
+var resultsContainer = document.getElementById('results');
+var submitButton = document.getElementById('submit');
+
+
+
+function buildingQuiz(){
+
+}
+function timer() {
+    var countdown = 60;
+    var interval = setInterval(function(){
+        document.getElementById('countdown').innerHTML=countdown;
+        count--;
+        if (count === 0){
+            clearInterval(interval);
+            document.getElementById('countdown').innerHTML='Done';
+        }
+    }, 1000);
 }
 
-
-
-
-const submitButton = document.getElementById('submit');
-// clicking Submit, go to next question
+// clicking Start, proceeding to question 1
 submitButton.addEventListener('click", nextQuestion')

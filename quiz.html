@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+    <!-- Intro to Quiz -->
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,27 +9,24 @@
     <link rel="stylesheet" href="./quiz.css" />
 </head>
 
+<!-- Explanation of how the quiz works -->
 <body>
     <div class="home">
         <header>
             <h1>Coding Quiz Challenge</h1>
         </header>
+        <div class="highscores" id="highscores">View High Scores</div>
+        <div class="timer" id="countdown">Time:</div>
         <div class="quizcard" id="quiz">
             <div class="questions">
-                <h2>Question 1:</h2>
-                <p>
-                    String values must be enclosed within _____ when being assigned to variables.
-                </p>
+                <p>Try to answer the following code-related questions within the time limit.</p>
+                <p>Keep in mind that incorrect answers will penalize your score time by 10 seconds!</p>
             </div>
         </div>
-        <button id="next question" class="button">Start</button>
-    </div>
-    
-    <div class="score" id="results">
-        <h2>Initials:______</h2>
-        <h2>Score:______</h2>
+        <button class="start" id="next-question">Start Quiz</button>
     </div>
 
+    <!-- Javascript source-->
     <script src="./quiz.js"></script>
 </body>
 </html>
