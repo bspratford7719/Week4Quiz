@@ -1,0 +1,29 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html,
+body,
+.home {
+    height: 70%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #f9fbfd;
+}
+
+.home {
+    padding-top: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.button {
+    
+}
