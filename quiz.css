@@ -15,7 +15,19 @@ body,
 
 body {
     font-family: sans-serif;
-    background-color: #f9fbfd;
+}
+
+.highscores {
+    position: absolute;
+    top: 10px;
+    left: 55px;
+    color: darkblue;
+}
+
+.timer {
+    position: absolute;
+    top: 10px;
+    right: 55px;
 }
 
 .home {
@@ -24,6 +36,9 @@ body {
     padding-right: 20px;
 }
 
-.button {
-    
+.start {
+    text-align: center;
+    font-size: 20px;
+    background-color: darkblue;
+    color: white;
 }
