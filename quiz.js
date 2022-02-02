@@ -81,6 +81,7 @@ function generateQuiz() {
         else {
             quizResults.push('incorrect')
         }
+        currentQuestionSlide++
         console.log(quizResults)
     }
 
