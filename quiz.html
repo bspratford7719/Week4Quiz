@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+    <!-- Intro to Quiz -->
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,27 +9,35 @@
     <link rel="stylesheet" href="./quiz.css" />
 </head>
 
+<!-- Explanation of how the quiz works -->
 <body>
-    <div class="home">
+    <div class="home" id="home">
         <header>
             <h1>Coding Quiz Challenge</h1>
         </header>
         <div class="highscores" id="highscores">View High Scores</div>
         <div class="timer" id="timer">Time:</div>
-        <div class="quizcard" id="quiz">
+        <div class="quizcard" id="quizcard">
             <div class="questions">
                 <p>Try to answer the following code-related questions within the time limit.</p>
-                <p>Keep in mind that incorrect answers will penalize your score/time by 10 seconds!</p>
+                <p>Keep in mind that incorrect answers will penalize your score time by 10 seconds!</p>
             </div>
         </div>
-        <button class="start" id="next-question">Start Quiz</button>
+        <button class="start" id="start">Start Quiz</button>
+    </div>
+    <div class="quiz" id="quiz">
+        <h1>Quiz Questions</h1>
+
+        <div id="question-title"></div>
+
+        <h2>Answers</h2>
+
+        <div id="question-options"></div>
     </div>
     
-    <div class="score" id="results">
-        <h2>Initials:______</h2>
-        <h2>Score:______</h2>
-    </div>
 
+
+    <!-- Javascript source-->
     <script src="./quiz.js"></script>
 </body>
 </html>
