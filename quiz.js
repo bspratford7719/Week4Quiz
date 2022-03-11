@@ -5,6 +5,9 @@ var homeSection = document.getElementById('home');
 var startQuiz = document.getElementById('start');
 var questionTitle = document.getElementById('question-title');
 var questionOptions = document.getElementById('question-options');
+var highScores = document.getElementById('highscores');
+//var quizQuestions = document.getElementById('questions');
+
 
 var quizQuestions = [
     {
@@ -58,11 +61,6 @@ var quizQuestions = [
         correctAnswer: 'JavaScript'
     }
 ]
-var quizResults = []
-
-function showSlide() {
-
-}
 
 // functions used
 function generateQuiz() {
@@ -75,7 +73,7 @@ function generateQuiz() {
 
     function clickAnswer(event) {
         var selectedAnswer = event.target.value;
-        if(selectedAnswer === currentQuestion.correctAnswer) {
+        if (selectedAnswer === currentQuestion.correctAnswer) {
             quizResults.push('correct')
         }
         else {
@@ -85,7 +83,7 @@ function generateQuiz() {
         console.log(quizResults)
     }
 
-    for(number in currentQuestion.answers){
+    for (number in currentQuestion.answers) {
         const button = document.createElement("button");
         button.innerText = number + ': ' + currentQuestion.answers[number];
         button.value = currentQuestion.answers[number]
@@ -97,21 +95,26 @@ function generateQuiz() {
     // questionOptions.innerHTML = options.join("")
     // quizResults.push({})
     // currentQuestionSlide++;
-    
+
 }
 
 function timer() {
     var countdown = 60;
-    var interval = setInterval(function(){
-        document.getElementById('countdown').innerHTML=countdown;
+    var interval = setInterval(function () {
+        document.getElementById('countdown').innerHTML = countdown;
         count--;
-        if (count === 0){
+        if (count === 0) {
             clearInterval(interval);
-            document.getElementById('countdown').innerHTML='Done';
+            document.getElementById('countdown').innerHTML = 'Done';
         }
     }, 1000);
+}
+
+function scores() {
+    var viewscores = ;
 }
 
 quizContainer.style.display = 'none';
 // clicking Start, proceeding to question 1
 startQuiz.addEventListener('click', generateQuiz);
+highScores.addEventListener('click', scores);
