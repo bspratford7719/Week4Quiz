@@ -6,9 +6,7 @@ var startQuiz = document.getElementById('start');
 var questionTitle = document.getElementById('question-title');
 var questionOptions = document.getElementById('question-options');
 var highScores = document.getElementById('highscores');
-//var quizQuestions = document.getElementById('questions');
-
-
+var quizResults = [];
 var quizQuestions = [
     {
         question: "Commonly used data types DO not include:",
@@ -63,6 +61,9 @@ var quizQuestions = [
 ]
 
 // functions used
+function nextQuestion(currentQuestion){
+    questionTitle.innerHTML = currentQuestion.question
+}
 function generateQuiz() {
     var currentQuestionSlide = 0;
     homeSection.style.display = 'none';
@@ -79,18 +80,10 @@ function generateQuiz() {
         else {
             quizResults.push('incorrect')
         }
+        console.log(quizResults);
         currentQuestionSlide++
-        console.log(quizResults)
     }
 
-    for (number in currentQuestion.answers) {
-        const button = document.createElement("button");
-        button.innerText = number + ': ' + currentQuestion.answers[number];
-        button.value = currentQuestion.answers[number]
-
-        button.addEventListener("click", clickAnswer)
-        questionOptions.appendChild(button);
-    }
 
     // questionOptions.innerHTML = options.join("")
     // quizResults.push({})
@@ -111,7 +104,7 @@ function timer() {
 }
 
 function scores() {
-    var viewscores = ;
+    //var viewscores = ;
 }
 
 quizContainer.style.display = 'none';
