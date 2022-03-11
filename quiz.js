@@ -6,7 +6,10 @@ var startQuiz = document.getElementById('start');
 var questionTitle = document.getElementById('question-title');
 var questionOptions = document.getElementById('question-options');
 var highScores = document.getElementById('highscores');
+var questionResults = document.getElementById('results');
 var quizResults = [];
+var currentQuestionSlide = 0;
+
 var quizQuestions = [
     {
         question: "Commonly used data types DO not include:",
@@ -59,36 +62,41 @@ var quizQuestions = [
         correctAnswer: 'JavaScript'
     }
 ]
+var currentQuestion = quizQuestions[currentQuestionSlide];
 
 // functions used
 function nextQuestion(currentQuestion){
-    questionTitle.innerHTML = currentQuestion.question
+    questionTitle.innerHTML = currentQuestion.question;
+    questionOptions.innerHTML = null;
+    for (number in currentQuestion.answers) {
+        const button = document.createElement("button");
+        button.innerText = number + ': ' + currentQuestion.answers[number];
+        button.value = currentQuestion.answers[number]
+
+        button.addEventListener("click", clickAnswer)
+        questionOptions.appendChild(button);
+    }
+}
+
+function clickAnswer(event) {
+    var selectedAnswer = event.target.value;
+    if (selectedAnswer === currentQuestion.correctAnswer) {
+        quizResults.push('correct')
+        questionOptions.innerHTML = correct;
+    }
+    else {
+        quizResults.push('incorrect')
+        questionOptions.innerHTML = incorrect;
+    }
+    console.log(quizResults);
+    currentQuestionSlide++
+    currentQuestion = quizQuestions[currentQuestionSlide];
+    nextQuestion(currentQuestion)
 }
 function generateQuiz() {
-    var currentQuestionSlide = 0;
     homeSection.style.display = 'none';
     quizContainer.style.display = 'block';
-
-    var currentQuestion = quizQuestions[currentQuestionSlide];
-    questionTitle.innerHTML = currentQuestion.question
-
-    function clickAnswer(event) {
-        var selectedAnswer = event.target.value;
-        if (selectedAnswer === currentQuestion.correctAnswer) {
-            quizResults.push('correct')
-        }
-        else {
-            quizResults.push('incorrect')
-        }
-        console.log(quizResults);
-        currentQuestionSlide++
-    }
-
-
-    // questionOptions.innerHTML = options.join("")
-    // quizResults.push({})
-    // currentQuestionSlide++;
-
+    nextQuestion(currentQuestion)
 }
 
 function timer() {
@@ -108,6 +116,6 @@ function scores() {
 }
 
 quizContainer.style.display = 'none';
-// clicking Start, proceeding to question 1
+// clicking Start, proceeding to next question
 startQuiz.addEventListener('click', generateQuiz);
 highScores.addEventListener('click', scores);
