@@ -99,6 +99,7 @@ function generateQuiz() {
     nextQuestion(currentQuestion)
 }
 
+
 function timer() {
     var countdown = 60;
     var interval = setInterval(function () {
