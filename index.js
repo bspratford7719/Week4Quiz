@@ -93,24 +93,24 @@ function clickAnswer(event) {
     currentQuestion = quizQuestions[currentQuestionSlide];
     nextQuestion(currentQuestion)
 }
+
 function generateQuiz() {
     homeSection.style.display = 'none';
     quizContainer.style.display = 'block';
     nextQuestion(currentQuestion)
 }
 
-
-function timer() {
-    var countdown = 60;
-    var interval = setInterval(function () {
-        document.getElementById('countdown').innerHTML = countdown;
-        count--;
-        if (count === 0) {
-            clearInterval(interval);
-            document.getElementById('countdown').innerHTML = 'Done';
-        }
-    }, 1000);
-}
+//function timer() {
+//  var countdown = 60;
+//    var interval = setInterval(function () {
+//        document.getElementById('countdown').innerHTML = countdown;
+//        count--;
+//        if (count === 0) {
+//            clearInterval(interval);
+//            document.getElementById('countdown').innerHTML = 'Done';
+//        }
+//    }, 1000);
+//}
 
 function scores() {
     //var viewscores = ;
